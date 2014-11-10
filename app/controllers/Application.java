@@ -6,17 +6,17 @@ import java.util.List;
 import org.geojson.LngLatAlt;
 
 import play.libs.Json;
+import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Results;
 import views.html.index;
-import actors.ClientConnectionProtocol;
-import actors.ClientConnectionProtocol.User;
-import actors.ClientConnectionProtocol.WeatherLocation;
-import actors.ClientConnectionProtocol.WeatherLocations;
 import actors.WeatherActor;
-import play.mvc.BodyParser;
 
+import com.boarbeard.weathersbetter.ClientConnectionProtocol;
+import com.boarbeard.weathersbetter.ClientConnectionProtocol.User;
+import com.boarbeard.weathersbetter.ClientConnectionProtocol.WeatherLocation;
+import com.boarbeard.weathersbetter.ClientConnectionProtocol.WeatherLocations;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import exceptions.ExternalWeatherApiException;

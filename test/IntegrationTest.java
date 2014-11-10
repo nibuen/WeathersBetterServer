@@ -14,9 +14,9 @@ import play.mvc.Http.Status;
 import play.mvc.Result;
 import play.test.FakeRequest;
 import play.test.Helpers;
-import actors.ClientConnectionProtocol;
-import actors.ClientConnectionProtocol.WeatherLocations;
 
+import com.boarbeard.weathersbetter.ClientConnectionProtocol;
+import com.boarbeard.weathersbetter.ClientConnectionProtocol.WeatherLocations;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class IntegrationTest {
