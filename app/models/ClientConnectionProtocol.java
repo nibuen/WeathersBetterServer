@@ -32,14 +32,20 @@ public abstract class ClientConnectionProtocol {
      */
     public static class User extends ClientEvent {
         private final Point position;
+        private final int numWeatherLocations;
 
         @JsonCreator
-        public User(@JsonProperty("position") Point position) {
+        public User(@JsonProperty("position") Point position, @JsonProperty("numWeatherLocations") int numWeatherLocations) {
             this.position = position;
+            this.numWeatherLocations = numWeatherLocations;
         }
 
         public Point getPosition() {
             return position;
+        }
+
+        public int getNumWeatherLocations() {
+            return numWeatherLocations;
         }
     }
 

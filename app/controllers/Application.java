@@ -51,7 +51,7 @@ public class Application extends Controller {
 
 		LngLatAlt coordinates = user.getPosition().getCoordinates();
 		JsonNode jsonNode = WeatherActor.getWeather(coordinates.getLatitude(),
-				coordinates.getLongitude(), 30);
+				coordinates.getLongitude(), user.getNumWeatherLocations());
 
 		try {
 			WeatherLocations weatherLocations = weatherLocations(jsonNode);

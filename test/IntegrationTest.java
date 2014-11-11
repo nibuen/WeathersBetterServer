@@ -31,7 +31,7 @@ public class IntegrationTest {
 			public void run() {
 				JsonNode jsonNode = Json
 						.toJson(new ClientConnectionProtocol.User(new Point(
-								-115, 36)));
+								-115, 36), 5));
 
 				FakeRequest fakeRequest = new FakeRequest()
 						.withJsonBody(jsonNode);
@@ -67,7 +67,7 @@ public class IntegrationTest {
 				// Use an unearthly coordinate
 				JsonNode jsonNode = Json
 						.toJson(new ClientConnectionProtocol.User(new Point(
-								200, -200)));
+								200, -200), 5));
 
 				FakeRequest fakeRequest = new FakeRequest()
 						.withJsonBody(jsonNode);
