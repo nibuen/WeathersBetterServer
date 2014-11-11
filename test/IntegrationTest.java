@@ -6,6 +6,8 @@ import static play.test.Helpers.running;
 import static play.test.Helpers.status;
 import static play.test.Helpers.testServer;
 
+import java.util.List;
+
 import org.geojson.Point;
 import org.junit.Test;
 
@@ -16,6 +18,7 @@ import play.test.FakeRequest;
 import play.test.Helpers;
 
 import com.boarbeard.weathersbetter.ClientConnectionProtocol;
+import com.boarbeard.weathersbetter.ClientConnectionProtocol.WeatherLocation;
 import com.boarbeard.weathersbetter.ClientConnectionProtocol.WeatherLocations;
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -40,7 +43,17 @@ public class IntegrationTest {
 				WeatherLocations weatherLocations = Json.fromJson(bodyNode,
 						WeatherLocations.class);
 
-				assertThat(weatherLocations.getWeatherLocations()).isNotEmpty();
+				List<WeatherLocation> weatherLocationsList = weatherLocations
+						.getWeatherLocations();
+				assertThat(weatherLocationsList).isNotEmpty();
+
+				// Should be close enough to Las Vegas coords that this is true
+				assertThat(
+						weatherLocationsList.get(0).getPosition()
+								.getCoordinates().getLongitude()).isNegative();
+				assertThat(
+						weatherLocationsList.get(0).getPosition()
+								.getCoordinates().getLatitude()).isPositive();
 			}
 		});
 	}

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.geojson.LngLatAlt;
+import org.geojson.Point;
 
 import play.libs.Json;
 import play.mvc.BodyParser;
@@ -76,12 +77,19 @@ public class Application extends Controller {
 
 		for (JsonNode itemNode : jsonNode.get("list")) {
 			JsonNode mainNode = itemNode.get("main");
+			JsonNode coordNode = itemNode.get("coord");
 
-			WeatherLocation weatherLocation = new WeatherLocation(itemNode.get(
-					"name").asText(), kelvinToFahrenheit(mainNode.get("temp")
-					.asDouble()), kelvinToFahrenheit(mainNode.get("temp_min")
-					.asDouble()), kelvinToFahrenheit(mainNode.get("temp_max")
-					.asDouble()));
+			String name = itemNode.get("name").asText();
+			double temp = kelvinToFahrenheit(mainNode.get("temp").asDouble());
+			double minTemp = kelvinToFahrenheit(mainNode.get("temp_min")
+					.asDouble());
+			double maxTemp = kelvinToFahrenheit(mainNode.get("temp_max")
+					.asDouble());
+			Point point = new Point(coordNode.get("lon").asDouble(), coordNode
+					.get("lat").asDouble());
+
+			WeatherLocation weatherLocation = new WeatherLocation(name, temp,
+					minTemp, maxTemp, point);
 
 			weatherLocations.add(weatherLocation);
 		}

@@ -23,10 +23,10 @@ public class WeatherActor {
 
 	public static JsonNode getWeather(double longitude, double latitude,
 			int count) {
-		String jsonCall = "http://api.openweathermap.org/data/2.5/find?lat="
-				+ longitude + "&lon=" + latitude + "&cnt=" + count;
+		String url = "http://api.openweathermap.org/data/2.5/find?lat="
+				+ longitude + "&lon=" + latitude + "&cnt=" + count + "&APIID=6c4b6e6da512746881ef0a3108d1116e";
 
-		Promise<JsonNode> jsonPromise = WS.url(jsonCall).get()
+		Promise<JsonNode> jsonPromise = WS.url(url).get()
 				.map(response -> {
 					return response.asJson();
 				});
