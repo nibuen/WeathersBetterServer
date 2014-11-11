@@ -81,7 +81,6 @@
 	<classpathentry kind="lib" path="C:/Users/Leif/.ivy2/cache/org.objenesis/objenesis/jars/objenesis-1.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Leif/.ivy2/cache/org.specs2/specs2-matcher-extra_2.11/jars/specs2-matcher-extra_2.11-2.3.12.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Leif/.ivy2/cache/org.specs2/specs2-analysis_2.11/jars/specs2-analysis_2.11-2.3.12.jar"/>
-	<classpathentry kind="lib" path="libs/model.jar"/>
 	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_COMPILER_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/Leif/.ivy2/cache/org.specs2/classycle/jars/classycle-1.4.3.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Leif/.ivy2/cache/com.novocode/junit-interface/jars/junit-interface-0.11-RC1.jar"/>

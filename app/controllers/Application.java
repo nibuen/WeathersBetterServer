@@ -3,6 +3,11 @@ package controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import models.ClientConnectionProtocol;
+import models.ClientConnectionProtocol.User;
+import models.ClientConnectionProtocol.WeatherLocation;
+import models.ClientConnectionProtocol.WeatherLocations;
+
 import org.geojson.LngLatAlt;
 import org.geojson.Point;
 
@@ -14,10 +19,6 @@ import play.mvc.Results;
 import views.html.index;
 import actors.WeatherActor;
 
-import com.boarbeard.weathersbetter.ClientConnectionProtocol;
-import com.boarbeard.weathersbetter.ClientConnectionProtocol.User;
-import com.boarbeard.weathersbetter.ClientConnectionProtocol.WeatherLocation;
-import com.boarbeard.weathersbetter.ClientConnectionProtocol.WeatherLocations;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import exceptions.ExternalWeatherApiException;

@@ -8,6 +8,10 @@ import static play.test.Helpers.testServer;
 
 import java.util.List;
 
+import models.ClientConnectionProtocol;
+import models.ClientConnectionProtocol.WeatherLocation;
+import models.ClientConnectionProtocol.WeatherLocations;
+
 import org.geojson.Point;
 import org.junit.Test;
 
@@ -17,9 +21,6 @@ import play.mvc.Result;
 import play.test.FakeRequest;
 import play.test.Helpers;
 
-import com.boarbeard.weathersbetter.ClientConnectionProtocol;
-import com.boarbeard.weathersbetter.ClientConnectionProtocol.WeatherLocation;
-import com.boarbeard.weathersbetter.ClientConnectionProtocol.WeatherLocations;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class IntegrationTest {
